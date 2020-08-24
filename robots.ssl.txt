@@ -1,0 +1,6 @@
+User-agent: psbot
+Disallow: /
+User-agent: *
+Disallow:
+Crawl-delay: 10
+Sitemap: https://chibieditor-dev.webnode.fr/sitemap.xml
