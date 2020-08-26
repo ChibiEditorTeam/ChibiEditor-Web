@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html class="hover no-touch" data-lt-installed="true" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+
+  <title>Pixelmator Pro</title>
+  <meta name="description" content="Professional image editing tools that anyone can use.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="author" content="Pixelmator Team">
+
+  <script async="" src="amc_fichiers/analytics.js"></script><script>
+    document.documentElement.className += (("ontouchstart" in document.documentElement) ? '' : ' hover');
+    document.documentElement.className += ((window.devicePixelRatio >= 2) ? ' retina' : '');
+  </script>
+  <link rel="icon" type="image/png" href="https://www.pixelmator.com/assets/favicon/favicon-pro--v1.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.pixelmator.com/assets/favicon/favicon-144x144.png">
+  <link rel="stylesheet" href="amc_fichiers/light.css">
+  <meta property="fb:app_id" content="187687094761342">
+        <meta property="og:site_name" content="Pixelmator Pro">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="//www.pixelmator.com/pro/">
+        <meta property="og:title" content="Pixelmator Pro">
+        <meta property="og:description" content="Pixelmator Pro is a powerful, beautiful, and easy to use image editor packed full of innovations.">
+        <meta property="og:image" content="https://pro-cdn.pixelmator.com/pro/social/1.2.3/img-facebook.jpg">
+        <meta name="twitter:title" content="Pixelmator Pro">
+        <meta name="twitter:description" content="Pixelmator Pro is a powerful, beautiful, and easy to use image editor packed full of innovations.">
+        <meta name="twitter:url" content="//www.pixelmator.com/pro/">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@pixelmator">
+        <meta name="twitter:image:src" content="https://pro-cdn.pixelmator.com/pro/social/1.2.3/img-twitter.jpg">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1756423-1', 'auto');
+  ga('send', 'pageview');
+
+</script><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10) !important;
+    border: 1px solid #c8c7cc !important;
+    border-radius: 11px !important;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px !important;
+    width: auto !important;
+}
+
+.dark-mode .iw-contextMenu,
+.TnITTtw-dark-mode.iw-contextMenu,
+.TnITTtw-dark-mode .iw-contextMenu {
+    border-color: #747473 !important;
+}
+
+.iw-cm-menu {
+    background: #fff !important;
+    color: #000 !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: visible !important;
+}
+
+.dark-mode .iw-cm-menu,
+.TnITTtw-dark-mode.iw-cm-menu,
+.TnITTtw-dark-mode .iw-cm-menu {
+    background: #525251 !important;
+    color: #FFF !important;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif !important;
+    list-style: none !important;
+    padding: 10px !important;
+    padding-right: 20px !important;
+    border-bottom: 1px solid #c8c7cc !important;
+    font-weight: 400 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    line-height: inherit !important;
+    border-radius: 0 !important;
+    display: block !important;
+}
+
+.dark-mode .iw-cm-menu li, .TnITTtw-dark-mode .iw-cm-menu li {
+    border-bottom-color: #747473 !important;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px !important;
+    border-top-right-radius: 11px !important;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px !important;
+    border-bottom-right-radius: 11px !important;
+    border-bottom: none !important;
+}
+
+.iw-mOverlay {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0px !important;
+    left: 0px !important;
+    background: #FFF !important;
+    opacity: .5 !important;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3 !important;
+    cursor: default !important;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6 !important;
+}
+
+.dark-mode .iw-mSelected, .TnITTtw-dark-mode .iw-mSelected {
+    background-color: #676766 !important;
+}
+
+.iw-cm-arrow-right {
+    width: 0 !important;
+    height: 0 !important;
+    border-top: 5px solid transparent !important;
+    border-bottom: 5px solid transparent !important;
+    border-left: 5px solid #000 !important;
+    position: absolute !important;
+    right: 5px !important;
+    top: 50% !important;
+    margin-top: -5px !important;
+}
+
+.dark-mode .iw-cm-arrow-right, .TnITTtw-dark-mode .iw-cm-arrow-right {
+    border-left-color: #FFF !important;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style></head>
+
+<body>
+
+<div class="main-nav__bg"></div><div class="main-nav l-wrapper">
+    <div class="main-nav__inner l-inner l-inner--narrow">
+      <nav class="main-nav__nav">
+        <div class="main-nav__nav-inner"><a class="main-nav__nav-link is-active" href="https://www.pixelmator.com/mac/"><img src="" width="32" height="32"><span>macOS</span></a><a class="main-nav__nav-link" href="https://www.pixelmator.com/ios/"><img src="amc_fichiers/iOS-Icon-Rounded.png" width="32" height="32"><span>iOS</span></a><a class="main-nav__nav-link without-icon" href="https://discord.gg/vtavcAH"><span>Communauté</span></a></div>
+      </nav>
+    </div>
+  </div>
+    <div class="current-page l-wrapper">
+      <div class="current-page__inner l-inner l-inner--narrow">
+        <div class="current-page__hamburger">
+          <span class="current-page__hamburger-btn"></span>
+        </div>
+        <div class="current-page__info">
+          <h2 class="current-page__title">
+            <a class="current-page__title-link" href="https://www.pixelmator.com/pro/"><div class="current-page__title-wrapper"><img class="current-page__title-icon" src="amc_fichiers/ChibiEditor%2520macOS%2520-%2520App%2520Icon.png" width="32" height="32"><span class="current-page__title-name ">ChibiEditor<span class="current-page__title-version">&nbsp;1.2</span></span><span class="current-page__title-arrow"></span></div>
+            </a>
+          </h2>
+          <nav class="current-page__nav">
+            <div class="current-page__nav-inner"><a class="current-page__nav-link is-active" href="https://www.pixelmator.com/pro/">Overview</a><a class="current-page__nav-link" href="https://www.pixelmator.com/pro/updates/">What's New</a><a class="current-page__nav-link" href="https://www.pixelmator.com/pro/tech-specs/">Tech Specs</a><a class="current-page__nav-link" href="https://www.pixelmator.com/pro/faq/">FAQ</a><a class="current-page__nav-link" href="https://www.pixelmator.com/pro/free-trial/">Free Trial</a></div>
+          </nav>
+        </div>
+        <div class="current-page__cta"><a class="current-page__cta-btn" href="https://www.pixelmator.com/pro/buy/">Buy</a></div>
+      </div>
+      <div class="current-page__bg"></div>
+    </div>
+  
+
+<!-- CONTENT -->
+<main class="content is-relative" style="overflow-x: hidden;">
+
+  <header class="hero">
+
+    <div class="l-wrapper">
+
+      <div class="l-inner l-inner--wide is-artwork-wrapper">
+        <header class="hero__header">
+          <style>
+          @media only screen and (max-width: 768px) {
+              .hero__subtitle {
+                max-width: 470px !important;
+                font-size: 42px !important;
+                }
+              .hero__artwork.is-after-header {
+                margin-top: 55px;
+                margin-bottom: 55px;
+              }
+              .feature {margin-top: 0;}
+            }
+            @media only screen and (max-width: 620px) {
+              .hero__subtitle + .hero__link {margin-top: 22px !important;}
+              .hero__link + .hero__link {margin-top: 5px !important;}
+              .hero__artwork.is-after-header {margin-bottom: 35px;}
+            }
+            @media only screen and (max-width: 414px) {
+              .hero__subtitle {
+                max-width: 370px !important;
+                font-size: 32px !important;
+                }
+              .hero__artwork.is-after-header {margin-top: 45px;}
+              .hero__description {
+                font-size: 17px !important;
+                line-height: 1.5 !important;
+                }
+            }
+            @media only screen and (max-width: 340px) {
+              .hero__subtitle {font-size: 30px !important;}
+            }
+          </style>
+          <h2 class="hero__subtitle t-hero-subtitle" style="max-width: 610px;margin-top: 15px;margin-right: auto;margin-left: auto;font-size: 68px;font-weight: 700;line-height: 1.1;">Éditeur de chibis&nbsp;au style Trash,&nbsp;créé pour chacun.</h2>
+          <nav class="buy-try-buttons">
+            <a class="buy-try-buttons__item" href="https://github.com/">Télécharger<svg class="buy-try-buttons__item-icon" height="18" viewBox="0 0 40 40" width="18" xmlns="//www.w3.org/2000/svg"><path d="m20 40a20 20 0 1 1 20-20 20 20 0 0 1 -20 20zm0-36.81a16.81 16.81 0 1 0 16.81 16.81 16.81 16.81 0 0 0 -16.81-16.81zm.778 27.025a1.06 1.06 0 0 1 -1.552 0c-.395-.5-6.723-8.636-7.163-9.225-.322-.431.034-1 .768-1h4.169v-8.69a.8.8 0 0 1 .8-.8h4.4a.8.8 0 0 1 .8.8v8.693h4.153c.666 0 1.161.512.772 1.018-.312.406-6.609 8.512-7.147 9.204z" fill-rule="evenodd"></path></svg></a>
+            
+          </nav>
+        </header>
+
+        <figure class="hero__artwork hero__artwork--margin-bottom is-after-header">
+          <img class="hero__screenshot" src="amc_fichiers/img_pixelmator-pro-1.jpg" srcset="//pro-cdn.pixelmator.com/pro/homepage/1.7/img_pixelmator-pro-1.7@2x.jpg 2x" alt="" width="1400" height="788">
+        </figure>
+
+        <header class="hero__header" style="padding-bottom: 200px;">
+          <p class="hero__description t-hero-description" style="max-width: 680px; margin-right: auto;margin-left: auto;font-size: 28px;font-weight: 600;line-height: 42px;color: #101010;">Pixelmator
+ Pro is an image editor designed to make the most powerful professional 
+image editing tools accessible to everyone. And with an extensive 
+collection of tools for editing and retouching photos, creating graphic 
+designs, painting, drawing vector graphics, and adding stunning effects,
+ it’s the only image editor you’ll need.</p>
+          <a class="hero__link link link--big js-modal-open" data-type="video" data-source="//vimeo.com/295375647" data-name="overview-film" style="font-size: 27px;">Watch the film<svg xmlns="//www.w3.org/2000/svg" class="link__icon is-play" width="11" height="12" viewBox="0 0 22 24" style="width: 11px; height: 12px;"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path class="cls-1" d="M0.019,21.861V2.235A2.193,2.193,0,0,1,3.386.338C4.728,1.1,18.025,8.791,20.313,10.115a2.187,2.187,0,0,1,0,3.815c-1.647.971-15.047,8.737-17,9.818A2.18,2.18,0,0,1,.019,21.861Z"></path></svg></a>
+        </header>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <section class="new-section" id="whats-new">
+
+    <div class="l-wrapper">
+      <div class="l-inner l-inner--narrow">
+        <h2 class="new-section__title">Quoi de neuf sur<br>ChibiEditor <span style="font-weight: 300">1.2&nbsp;</span></h2>
+        <p class="new-section__description">Pixelmator Pro 1.7 Sequoia 
+adds the ability to type text on paths and shapes, makes it possible to 
+freely rotate the canvas to any angle, includes a friendly new welcome 
+screen, and improves ML Super Resolution.</p>
+        <a class="new-section__feature-numbers-link new-section__link" href="https://www.pixelmator.com/blog/2020/07/16/pixelmator-pro-1-7-major-update-adds-text-on-a-path-and-more/" style="margin-top: 24px;">
+            Learn more
+            <svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon" style="width: 6px; height: 11px;color: currentColor;margin-top: 1px;margin-left: 0px;"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg>
+          </a>
+      </div>
+    </div>
+
+    <div class="l-wrapper">
+      <div class="l-inner l-inner--narrow">
+        <div class="newSection">
+          <p class="newSection__icon"><img src="amc_fichiers/ico_type-on-a-path.png" srcset="//pro-cdn.pixelmator.com/pro/homepage/1.7/ico_type-on-a-path@2x.png 2x" width="62" height="62"></p>
+          <h2 class="newSection__title">Type on a Path</h2>
+          <p class="newSection__description">Easily type text on a path, a circle, or any other shape.</p>
+          <p style="text-align:left;"><a class="new-section__feature-numbers-link new-section__link newSection__updates" href="https://www.pixelmator.com/pro/text/" style="margin-top: 24px;">
+            Learn more
+            <svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon" style="width: 6px; height: 11px;color: currentColor;margin-top: 1px;margin-left: 0px;"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg>
+          </a></p>
+          <div class="newSection__video">
+            <div class="newSection__video-block">
+              <video autoplay="autoplay" loop="" muted="muted" playsinline="" width="960" height="540">
+                <source src="amc_fichiers/video_text-on-a-path.mp4">
+              
+            </video></div>
+            <!-- <div class="newSection__video-texts"> -->
+              <!-- <div class="newSection__video-texts-text">
+                <h4 class="newSection__video-texts-title">Three New Tools</h4>
+                <p class="newSection__video-texts-description">Design text using Circular Type, Path Type, and Freeform Type tools.</p>
+              </div>
+              <div class="newSection__video-texts-text">
+                <h4 class="newSection__video-texts-title">Emoji and SVG Fonts</h4>
+                <p class="newSection__video-texts-description">Enjoy full support for designing path text using emoji and SVG fonts.</p>
+              </div>
+              <div class="newSection__video-texts-text">
+                <h4 class="newSection__video-texts-title">Convert into Shape</h4>
+                <p class="newSection__video-texts-description">Easily convert path type layers into shapes.</p>
+              </div> -->
+            <!-- </div> -->
+          </div>
+          <div class="newSection__features">
+            <div class="newSection__features-feature">
+              <img src="amc_fichiers/ico_canvas-rotation.png" srcset="//pro-cdn.pixelmator.com/pro/homepage/1.7/new/ico_canvas-rotation@2x.png 2x" class="newSection__features-icon" width="62" height="62">
+              <h4 class="newSection__features-title">Canvas Rotation</h4>
+              <p class="newSection__features-description">Freely rotate the image canvas to any angle.</p>
+            </div>
+            <div class="newSection__features-feature">
+              <img src="amc_fichiers/ico_welcome-screen.png" srcset="//pro-cdn.pixelmator.com/pro/homepage/1.7/new/ico_welcome-screen@2x.png 2x" class="newSection__features-icon" width="62" height="62">
+              <h4 class="newSection__features-title">Welcome Screen</h4>
+              <p class="newSection__features-description">Use the friendly new welcome screen to more easily open images and create new ones.</p>
+            </div>
+            <div class="newSection__features-feature">
+              <img src="amc_fichiers/ico_ml-resolution.png" srcset="//pro-cdn.pixelmator.com/pro/homepage/1.7/new/ico_ml-resolution@2x.png 2x" class="newSection__features-icon" width="62" height="62">
+              <h4 class="newSection__features-title">ML Super Resolution</h4>
+              <p class="newSection__features-description">Version 3 brings quality improvements, a progress bar, and support for RAW images.</p>
+            </div>
+          </div>
+          <!-- <h2 class="newSection__title">Also Recently Added</h2>
+          <div class="newSection__features">
+            <div class="newSection__features-feature">
+              <img src="//pro-cdn.pixelmator.com/pro/homepage/1.5.4/whats-new/ico_ml-super-resolution.png" srcset="//pro-cdn.pixelmator.com/pro/homepage/1.5.4/whats-new/ico_ml-super-resolution.png 1x, //pro-cdn.pixelmator.com/pro/homepage/1.5.4/whats-new/ico_ml-super-resolution@2x.png 2x" width="62" height="62" class="newSection__features-icon" />
+              <h4 class="newSection__features-title">ML Super Resolution</h4>
+              <p class="newSection__features-description">Use machine learning magic to increase the resolution of images while keeping them sharp and detailed.</p>
+            </div>
+            <div class="newSection__features-feature">
+              <img src="//pro-cdn.pixelmator.com/pro/homepage/1.5.4/whats-new/ico-cmyk-proofing-v1.png" srcset="//pro-cdn.pixelmator.com/pro/homepage/1.5.4/whats-new/ico-cmyk-proofing.png 1x, //pro-cdn.pixelmator.com/pro/homepage/1.5.4/whats-new/ico-cmyk-proofing-v1@2x.png 2x" width="62" height="62" class="newSection__features-icon" />
+              <h4 class="newSection__features-title">CMYK Proofing</h4>
+              <p class="newSection__features-description">See an accurate, real-time preview of your image in CMYK colors or other color profiles.</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="l-wrapper">
+      <div class="l-inner l-inner--narrow">
+        <a class="new-section__feature-numbers-link new-section__link newSection__updates" href="https://www.pixelmator.com/pro/updates/" style="margin-top: 24px;">
+            What's New in Pixelmator Pro
+            <svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon" style="width: 6px; height: 11px;color: currentColor;margin-top: 1px;margin-left: 0px;"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg>
+          </a>
+      </div>
+    </div>
+
+    <div class="new-section__gradient"></div>
+  
+  </section>
+
+  <section class="features">
+
+    <article class="feature" data-section="experience">
+    
+      <div class="l-wrapper">
+
+        <div class="l-inner l-inner--narrow">
+
+          <header class="feature__header">
+            <h3 class="feature__name t-level-2_name">Experience</h3>
+            <h2 class="feature__title t-level-2_title">Ultimately, totally and completely Mac.</h2>
+            <p class="feature__description t-level-2_description">Pixelmator
+ Pro is a powerful, beautiful, and easy to use image editor. Featuring 
+an elegant and streamlined single-window interface, it puts all the 
+focus on the images you edit, rather than what’s around them. And with a
+ design that is totally and completely Mac, it feels instantly familiar 
+from the moment you first open the app. So image editing becomes simpler
+ and more enjoyable than ever.</p>
+          </header>
+
+        </div>
+
+        <div class="l-inner l-inner--wide is-artwork-wrapper">
+
+          <figure class="feature__artwork">
+            <img class="feature__screenshot" src="amc_fichiers/img-experience.jpg" srcset="//pro-cdn.pixelmator.com/pro/experience/1.2/img-experience.jpg 1x, //pro-cdn.pixelmator.com/pro/experience/1.2/img-experience@2x.jpg 2x" alt="" width="1400" height="788">
+          </figure>
+
+        </div>
+
+        <div class="l-inner l-inner--narrow">
+
+          <nav class="links">
+            <a class="links__link link is-film link--big js-modal-open" data-type="video" data-source="//vimeo.com/237710717" data-name="experience-film">Watch the Experience film<svg xmlns="//www.w3.org/2000/svg" class="link__icon is-play" width="11" height="12" viewBox="0 0 22 24" style="-webkit-transform: translateY(-1px);-ms-transform: translateY(-1px);transform: translateY(-1px);"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path class="cls-1" d="M0.019,21.861V2.235A2.193,2.193,0,0,1,3.386.338C4.728,1.1,18.025,8.791,20.313,10.115a2.187,2.187,0,0,1,0,3.815c-1.647.971-15.047,8.737-17,9.818A2.18,2.18,0,0,1,.019,21.861Z"></path></svg></a>
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/experience/">Learn more about Experience<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="feature" data-section="layouting">
+    
+      <div class="l-wrapper">
+
+        <div class="l-inner l-inner--narrow">
+
+          <header class="feature__header">
+            <h3 class="feature__name t-level-2_name">Layouting</h3>
+            <h2 class="feature__title t-level-2_title">Everything you need to create stunning layouts.</h2>
+            <p class="feature__description t-level-2_description">With 
+intelligent, intuitive tools for moving, resizing, and arranging layers,
+ Pixelmator Pro makes it incredibly easy to put every object in your 
+composition exactly where you want it. The Arrange Tool is 
+nondestructive so you can resize and rotate with total freedom. Smart 
+spacing guides appear automatically to help evenly arrange objects. And 
+advanced alignment tools give you a way to align multiple objects with a
+ single click. So no matter what kind of composition you’re working on, 
+Pixelmator Pro is the perfect app for building it up, piece by piece.</p>
+          </header>
+
+        </div>
+
+        <div class="l-inner l-inner--wide is-artwork-wrapper">
+
+          <figure class="feature__artwork">
+            <img class="feature__screenshot" src="amc_fichiers/img_layouting2x.jpg" srcset="//pro-cdn.pixelmator.com/pro/layouting/1.3.4/img_layouting@2x.jpg 1x, //pro-cdn.pixelmator.com/pro/layouting/1.3.4/img_layouting@2x.jpg 2x" alt="" width="1400" height="788">
+          </figure>
+
+        </div>
+
+        <div class="l-inner l-inner--narrow">
+
+          <nav class="links">
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/layouting/">Learn more about Layouting<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="feature" data-section="painting">
+    
+      <div class="l-wrapper">
+
+        <div class="l-inner l-inner--narrow">
+
+          <header class="feature__header">
+            <h3 class="feature__name t-level-2_name">Painting</h3>
+            <h2 class="feature__title t-level-2_title">An all-new digital painting experience.</h2>
+            <p class="feature__description t-level-2_description">Pixelmator
+ Pro is a dream to paint with. Thanks to a cutting-edge painting engine 
+powered by the Metal 2 graphics technology, painting is staggeringly 
+responsive, fluid, and natural. We’ve also packed in a stunning 
+collection of handcrafted brushes with dual textures, advanced brush 
+dynamics, and our new Dynamic Paint Blending technology. With a range of
+ innovative features and new technologies, painting in Pixelmator Pro is
+ more enjoyable than ever — whether you’re just scribbling and sketching
+ or creating complex paintings.</p>
+          </header>
+
+        </div>
+
+        <div class="l-inner l-inner--wide is-artwork-wrapper">
+
+          <figure class="feature__artwork">
+            <img class="feature__screenshot" src="amc_fichiers/img-painting--v2.jpg" srcset="//pro-cdn.pixelmator.com/pro/painting/1.4/img-painting--v2.jpg 1x, //pro-cdn.pixelmator.com/pro/painting/1.4/img-painting--v2@2x.jpg 2x" alt="" width="1400" height="788">
+          </figure>
+
+        </div>
+
+        <div class="l-inner l-inner--narrow">
+
+          <nav class="links">
+            <a class="links__link link is-film link--big js-modal-open" data-type="video" data-source="//vimeo.com/235001184" data-name="painting-film">Watch the Painting film<svg xmlns="//www.w3.org/2000/svg" class="link__icon is-play" width="11" height="12" viewBox="0 0 22 24" style="-webkit-transform: translateY(-1px);-ms-transform: translateY(-1px);transform: translateY(-1px);"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path class="cls-1" d="M0.019,21.861V2.235A2.193,2.193,0,0,1,3.386.338C4.728,1.1,18.025,8.791,20.313,10.115a2.187,2.187,0,0,1,0,3.815c-1.647.971-15.047,8.737-17,9.818A2.18,2.18,0,0,1,.019,21.861Z"></path></svg></a>
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/painting/">Learn more about Painting<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="feature" data-section="color-adjustments">
+    
+      <div class="l-wrapper">
+
+        <div class="l-inner l-inner--narrow">
+
+          <header class="feature__header">
+            <h3 class="feature__name t-level-2_name">Color Adjustments</h3>
+            <h2 class="feature__title t-level-2_title">Every color adjustment for picture-perfect photos.</h2>
+            <p class="feature__description t-level-2_description">Featuring
+ a collection of powerful, nondestructive color adjustments, Pixelmator 
+Pro lets you edit the colors in your photos in any way you want. Each 
+adjustment has breathtaking color quality thanks to advanced image 
+processing techniques that eliminate posterization artifacts and improve
+ clarity. The RAW Layers feature lets you edit multiple RAW images as 
+layers in a single document using all the additional image detail saved 
+in your RAW files. And Recipes give you a way to easily save, reuse, and
+ share your favorite adjustment combinations.</p>
+          </header>
+
+        </div>
+
+        <div class="l-inner l-inner--wide is-artwork-wrapper">
+
+          <figure class="feature__artwork">
+            <img class="feature__screenshot" src="amc_fichiers/img-color-adjustments.jpg" srcset="//pro-cdn.pixelmator.com/pro/color-adjustments/1.4/img-color-adjustments.jpg 1x, //pro-cdn.pixelmator.com/pro/color-adjustments/1.4/img-color-adjustments@2x.jpg 2x" alt="" width="1400" height="788">
+          </figure>
+
+        </div>
+
+        <div class="l-inner l-inner--narrow">
+
+          <nav class="links">
+            <a class="links__link link is-film link--big js-modal-open" data-type="video" data-source="//vimeo.com/244327492" data-name="color-adjustments-film">Watch the Color Adjustments film<svg xmlns="//www.w3.org/2000/svg" class="link__icon is-play" width="11" height="12" viewBox="0 0 22 24" style="-webkit-transform: translateY(-1px);-ms-transform: translateY(-1px);transform: translateY(-1px);"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path class="cls-1" d="M0.019,21.861V2.235A2.193,2.193,0,0,1,3.386.338C4.728,1.1,18.025,8.791,20.313,10.115a2.187,2.187,0,0,1,0,3.815c-1.647.971-15.047,8.737-17,9.818A2.18,2.18,0,0,1,.019,21.861Z"></path></svg></a>
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/color-adjustments/">Learn more about Color Adjustments<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="feature" data-section="effects">
+    
+      <div class="l-wrapper">
+
+        <div class="l-inner l-inner--narrow">
+
+          <header class="feature__header">
+            <h3 class="feature__name t-level-2_name">Effects</h3>
+            <h2 class="feature__title t-level-2_title">Real-time, nondestructive, blockbuster effects.</h2>
+            <p class="feature__description t-level-2_description">Pixelmator
+ Pro comes with a collection of versatile effects that you can mix and 
+combine to develop any artistic or special effects you can imagine. 
+They’re nondestructive, so you can always edit, rearrange, and remove 
+the effects you’ve applied, and even apply multiple effects to a single 
+layer — seeing all your changes in real time. And now, thanks to 
+Recipes, you can save all the effects you develop, use them in any of 
+your images, and even share them with others.</p>
+          </header>
+
+        </div>
+
+        <div class="l-inner l-inner--wide is-artwork-wrapper">
+
+          <figure class="feature__artwork">
+            <img class="feature__screenshot" src="amc_fichiers/img-effects.jpg" srcset="//pro-cdn.pixelmator.com/pro/effects/1.2/img-effects.jpg 1x, //pro-cdn.pixelmator.com/pro/effects/1.2/img-effects@2x.jpg 2x" alt="" width="1400" height="788">
+          </figure>
+
+        </div>
+
+        <div class="l-inner l-inner--narrow">
+
+          <nav class="links">
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/effects/">Learn more about Effects<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="feature" data-section="much-more">
+    
+      <div class="l-wrapper">
+
+        <div class="l-inner l-inner--narrow">
+
+          <header class="feature__header">
+            <h3 class="feature__name t-level-2_name">Much More</h3>
+            <h2 class="feature__title t-level-2_title">Retouching, Selecting, Shapes, Styles...</h2>
+            <p class="feature__description t-level-2_description">A 
+magical Repair tool. The world’s smartest and fastest Quick Selection 
+tool. A beautiful collection of shapes and drawing tools. Breathtaking 
+layer styles. That’s just a few of the over 40 awesome tools Pixelmator 
+Pro includes — each one designed and refined with a meticulous attention
+ to detail.</p>
+          </header>
+
+        </div>
+
+        <div class="l-inner l-inner--wide is-artwork-wrapper">
+
+          <figure class="feature__artwork">
+            <img class="feature__screenshot" src="amc_fichiers/img-text.jpg" srcset="//pro-cdn.pixelmator.com/pro/text/1.2/img-text.jpg 1x, //pro-cdn.pixelmator.com/pro/text/1.2/img-text@2x.jpg 2x" alt="" width="1400" height="788">
+          </figure>
+
+        </div>
+
+        <div class="l-inner l-inner--narrow">
+
+          <nav class="links is-more">
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/export-for-web/">Learn more about Export for Web<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/reshaping/">Learn more about Reshaping<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/retouching/">Learn more about Retouching<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/selecting/">Learn more about Selecting<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/shapes/">Learn more about Shapes<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/styles/">Learn more about Styles<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/text/">Learn more about Text<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+            <!-- <a class="links__link link link--big" href="/pro/coming-soon/">Coming Soon<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"/></svg></a> -->
+          </nav>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="feature" data-section="technologies">
+    
+      <div class="l-wrapper">
+
+        <div class="l-inner l-inner--narrow">
+
+          <header class="feature__header">
+            <h3 class="feature__name t-level-2_name">Technologies</h3>
+            <h2 class="feature__title t-level-2_title">Machine learning-enhanced, GPU-powered image editing.</h2>
+            <p class="feature__description t-level-2_description">The 
+incredibly modern image editing engine in Pixelmator Pro is seriously 
+sophisticated and seriously powerful. It’s powered by the graphics 
+processor in your Mac, in tandem with advanced Mac graphics technologies
+ such as Metal 2 and Core Image. Pushing the boundaries of image 
+editing, Pixelmator Pro also includes machine learning-enhanced editing 
+features. So tools are not just blistering fast — they’re whip smart 
+too.</p>
+          </header>
+
+        </div>
+
+      </div>
+
+      <figure class="feature__fullscreen is-technologies">
+
+        <div class="fullscreen-image-container">
+
+          <div class="l-wrapper">
+
+            <div class="l-inner l-inner--wide">
+
+              <div class="fullscreen-image"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </figure>
+
+      <div class="l-wrapper">
+
+        <div class="l-inner l-inner--narrow">
+
+          <nav class="links">
+            <a class="links__link link link--big" href="https://www.pixelmator.com/pro/machine-learning/">Learn more about Machine Learning<svg xmlns="//www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 16 28" class="link__icon"><defs><style>.cls-1 {fill-rule: evenodd;}</style></defs><path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-1" d="M14.639,15.929L5.248,26.335a2.646,2.646,0,1,1-3.741-3.741l7.74-8.577L1.479,5.409A2.646,2.646,0,0,1,5.22,1.668l9.391,10.406A2.8,2.8,0,0,1,14.639,15.929Z"></path></svg></a>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+</main>
+<footer class="buy-block l-wrapper">
+  <div class="buy-block__inner l-inner l-inner--narrow">
+    <img class="buy-block__icon" src="amc_fichiers/ico-pixelmator-pro_big--v2.png" srcset="//pro-cdn.pixelmator.com/app-icons/ico-pixelmator-pro_big--v2.png 1x,//pro-cdn.pixelmator.com/app-icons/ico-pixelmator-pro_big--v2@2x.png  2x" alt="" width="128" height="128">
+    
+    <h2 class="buy-block__title">Pixelmator Pro</h2>
+    <h3 class="buy-block__description">Pixelmator Pro is currently on sale for $27.99.</h3>
+          
+    <a href="https://www.pixelmator.com/pro/buy/" class="buy-block__btn">Buy</a>
+  </div>
+</footer>
+
+<!-- /CONTENT -->
+<footer class="global-footer">
+  <div class="global-footer__wrapper l-wrapper">
+    <div class="global-footer__nav l-inner l-inner--narrow">
+      <div class="global-footer__nav-columns">
+        <div class="global-footer__nav-column">
+          <h5 class="global-footer__nav-title"><span>Pixelmator Pro</span><span class="global-footer-arrow"></span></h5>
+          <nav class="global-footer__nav-links">
+            <a href="https://www.pixelmator.com/pro/" class="global-footer__nav-link">Overview</a>
+            <a href="https://www.pixelmator.com/pro/buy/" class="global-footer__nav-link">Buy</a>
+            <a href="https://www.pixelmator.com/pro/free-trial/" class="global-footer__nav-link">Free Trial</a>
+            <a href="https://www.pixelmator.com/pro/updates/" class="global-footer__nav-link">What's New</a>
+            <a href="https://www.pixelmator.com/tutorials/" class="global-footer__nav-link">Tutorials</a>
+            <a href="https://www.pixelmator.com/pro/faq/" class="global-footer__nav-link">FAQ</a>
+            <a href="https://www.pixelmator.com/pro/tech-specs/" class="global-footer__nav-link">Tech Specs</a>
+            <a href="https://www.pixelmator.com/support/guide/pixelmator-pro/" class="global-footer__nav-link">User Guide</a>
+          </nav>
+        </div>
+        <div class="global-footer__nav-column">
+          <h5 class="global-footer__nav-title"><span>Pixelmator Photo</span><span class="global-footer-arrow"></span></h5>
+          <nav class="global-footer__nav-links">
+            <a href="https://www.pixelmator.com/photo/" class="global-footer__nav-link">Overview</a>
+            <a href="https://www.pixelmator.com/photo/buy/" class="global-footer__nav-link">Buy</a>
+            <a href="https://www.pixelmator.com/photo/updates/" class="global-footer__nav-link">What's New</a>
+            <a href="https://help.pixelmator.com/pixelmator-photo/" target="_blank" class="global-footer__nav-link">User Guide</a>
+          </nav>
+          <h5 class="global-footer__nav-title"><span>Pixelmator for iOS</span><span class="global-footer-arrow"></span></h5>
+          <nav class="global-footer__nav-links">
+            <a href="https://www.pixelmator.com/ios/" class="global-footer__nav-link">Overview</a>
+            <a href="https://www.pixelmator.com/ios/buy/" class="global-footer__nav-link">Buy</a>
+            <a href="https://www.pixelmator.com/ios/tech-specs/" class="global-footer__nav-link">Tech Specs</a>
+            <a href="https://www.pixelmator.com/ios/updates/" class="global-footer__nav-link">What's New</a>
+            <a href="https://help.pixelmator.com/ios/" target="_blank" class="global-footer__nav-link">User Guide</a>
+          </nav>
+        </div>
+        <div class="global-footer__nav-column">
+          <h5 class="global-footer__nav-title"><span>Pixelmator Classic</span><span class="global-footer-arrow"></span></h5>
+          <nav class="global-footer__nav-links">
+            <a href="https://www.pixelmator.com/mac/" class="global-footer__nav-link">Overview</a>
+            <a href="https://www.pixelmator.com/mac/buy/" class="global-footer__nav-link">Buy</a>
+            <a href="https://www.pixelmator.com/mac/free-trial/" class="global-footer__nav-link">Free Trial</a>
+            <a href="https://www.pixelmator.com/mac/updates/" class="global-footer__nav-link">What's New</a>
+            <a href="https://www.pixelmator.com/mac/tutorials/" class="global-footer__nav-link">Tutorials</a>
+            <a href="https://www.pixelmator.com/mac/faq/" class="global-footer__nav-link">FAQ</a>
+            <a href="https://www.pixelmator.com/mac/tech-specs/" class="global-footer__nav-link">Tech Specs</a>
+            <a href="https://help.pixelmator.com/mac/" target="_blank" class="global-footer__nav-link">User Guide</a>
+          </nav>
+        </div>
+        <div class="global-footer__nav-column">
+          <h5 class="global-footer__nav-title"><span>Pixelmator Team</span><span class="global-footer-arrow"></span></h5>
+          <nav class="global-footer__nav-links">
+            <a href="https://www.pixelmator.com/team/" class="global-footer__nav-link">About Us</a>
+            <a href="https://www.pixelmator.com/blog/" class="global-footer__nav-link">Blog</a>
+            <a href="https://www.pixelmator.com/support/" class="global-footer__nav-link">Support</a>
+          </nav>
+          <h5 class="global-footer__nav-title"><span>Community</span><span class="global-footer-arrow"></span></h5>
+          <nav class="global-footer__nav-links">
+            <a href="https://www.pixelmator.com/community/" class="global-footer__nav-link">Pixelmator Community</a>
+            <a href="https://twitter.com/pixelmator/" target="_blank" class="global-footer__nav-link">Twitter</a>
+            <a href="https://www.instagram.com/pixelmator/" target="_blank" class="global-footer__nav-link">Instagram</a>
+            <a href="https://www.facebook.com/pixelmator/" target="_blank" class="global-footer__nav-link">Facebook</a>
+            <a href="https://www.youtube.com/channel/UCg90iQHNzGl3SX7VRgAdkqw" target="_blank" class="global-footer__nav-link">Youtube</a>
+            <a href="https://vimeo.com/pixelmator" target="_blank" class="global-footer__nav-link">Vimeo</a>
+          </nav>
+        </div>
+        <div class="global-footer__subscribe global-footer-subscribe">
+          <h5 class="global-footer-subscribe__title">Subscribe to our Newsletter</h5>
+          <p class="global-footer-subscribe__description">Be the first to know about exiting Pixelmator news and updates.</p>
+          <form class="global-footer-subscribe__form">
+            <input class="global-footer-subscribe__form-input" type="email" placeholder="Your email address">
+            <button type="submit" class="global-footer-subscribe__form-submit">
+              <span class="global-footer-subscribe__form-submit-text">Sign Up</span>
+              <span class="global-footer-subscribe__form-submit-process">
+                <img src="amc_fichiers/ico_preloader.png" width="24" height="24">
+              </span>
+              <span class="global-footer-subscribe__form-submit-done">
+                <svg enable-background="new 0 0 448.8 448.8" height="20" viewBox="0 0 448.8 448.8" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m142.8 323.85-107.1-107.1-35.7 35.7 142.8 142.8 306-306-35.7-35.7z"></path></svg>
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="global-footer__copyright l-inner l-inner--narrow">
+      <p class="global-footer__copyright-text">Pixelmator Team, Copyright © 2020.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="amc_fichiers/jquery.js"></script>
+<script src="amc_fichiers/player.js"></script>
+<script src="amc_fichiers/global-header.js"></script>
+<script src="amc_fichiers/global-scripts.js"></script>
+<script src="amc_fichiers/footer.js"></script>
+<script>
+  $(function(){
+    $("a[href*='/pro/buy']").on("click", function(){
+      ga('send', 'event', 'pixelmator-pro-buy', 'click');
+    });
+    $("a[href*='/mac/upgrade-bundle']").on("click", function(){
+      ga('send', 'event', 'upgrade_bundle_click', 'click');
+    });
+    $("a[href*='/ios/buy']").on("click", function(){
+      ga('send', 'event', 'pixelmator-for-ios-buy', 'click');
+    });
+    $("a[href*='/photo/buy']").on("click", function(){
+      ga('send', 'event', 'pixelmator-photo-buy', 'click');
+    });
+  });
+</script>
+</body></html>
