@@ -1,4 +1,4 @@
-# ChibiEditor-Web
+# ChibiEditor Web
 
 #### Site web de ChibiEditor
 
