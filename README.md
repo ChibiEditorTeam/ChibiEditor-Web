@@ -2,4 +2,4 @@
 
 #### Site web de ChibiEditor
 
-Site web réalisé par Moustache.
+Géré et réalisé par Moustache
